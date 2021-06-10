@@ -481,6 +481,7 @@ public class TransactionController implements Initializable {
         });
 
     }
+//    thêm phwuong thức try/catch
 }
 
 
