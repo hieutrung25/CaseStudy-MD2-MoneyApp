@@ -81,6 +81,7 @@ public class TransactionController implements Initializable {
         });
 
         // disable future date in datepicker
+//        vô hiệu hóa ngày trong tương lai trong trình chọn ngày
         transactionDate.setDayCellFactory(param -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
@@ -112,6 +113,7 @@ public class TransactionController implements Initializable {
     }
 
     // When choose income or outcome, the dropdown list of transaction types are changed
+//    Khi chọn thu nhập hoặc kết quả, danh sách thả xuống của các loại giao dịch được thay đổi
     public void chooseIncomeTransaction(ActionEvent actionEvent) {
         System.out.println("User choose income transaction");
         transactionGroup.getItems().clear();
@@ -193,7 +195,7 @@ public class TransactionController implements Initializable {
         hiddenUUID.clear();
     }
 
-    // Add transactions to table
+    // Add transactions to table: thêm giao dịch vào bảng
     public void addTransactionToTable(ObservableList<Money> list) {
         transactionDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         transactionDetailColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -238,7 +240,7 @@ public class TransactionController implements Initializable {
         realMoneyLabel.setText(realMoneyLb);
     }
 
-    // Action when user tap a cell in table
+    // Hành động khi người dùng nhấn vào một ô trong bảng
     public void confirmUserAction(Money selectedMoney) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Xác nhận thao tác");
@@ -383,7 +385,7 @@ public class TransactionController implements Initializable {
         }
     }
 
-    // code for choice box
+    // code dùng để tạo hộp lựa chọn tính năng
     public void setOptionSortChoiceBox() {
         ObservableList<String> options =
                 FXCollections.observableArrayList(
@@ -424,7 +426,7 @@ public class TransactionController implements Initializable {
         allTransactionTable.refresh();
     }
 
-    // Code for check required field and enable save button
+    // kiểm tra code và chức năng bấm
     public void checkRequiredFields() {
         saveTransactionBtn.disableProperty().bind(
                 amountText.textProperty().isEmpty()
@@ -481,7 +483,7 @@ public class TransactionController implements Initializable {
         });
 
     }
-//    thêm phwuong thức try/catch
+
 }
 
 
